@@ -42,6 +42,11 @@ margin-left: 5px;
   background-position: -470px -253px;
 }
 
+#lista-disponibles{
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
 .texto{
   width: 90%;
 }

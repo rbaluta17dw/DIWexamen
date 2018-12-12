@@ -10,12 +10,26 @@ var libros = [];
 
 
 function ponerLibro(nuevoLibro){
+  var existe = false;
+  $('#lista-disponibles p').each(function(){
+    if($(this).html() == nuevoLibro.titulo){
+      existe = true;
+    }
+    if($(this).hasClass('creado')){
+      $(this).removeClass('creado');
+    }
+  });
+  if (existe) {
+    alert('eskere!!');
+  }else {
     $('#lista-disponibles').append('<p class="creado">'+nuevoLibro.titulo+'</p>');
+
+  }
 }
 
 
-window.onload = function()
-{
+
+$(document).ready(function(){
 
   var snd = document.getElementById("snd");
   snd.addEventListener("click", function() {
@@ -36,4 +50,4 @@ window.onload = function()
     ponerLibro(nuevoLibro);
   });
 
-}
+});
