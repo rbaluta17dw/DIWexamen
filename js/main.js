@@ -11,11 +11,12 @@ window.onload = function()
 
   var snd = document.getElementById("snd");
   snd.addEventListener("click", function() {
-    var insertar = new Libro('');
-
-
+    var datos = document.getElementById('insertar').elements;
+    var insertar = new Libro('ppp','eee',4444,'historia');
 
   });
+
+
 
 
 }
