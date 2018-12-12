@@ -38,11 +38,14 @@ $(document).ready(function(){
         consulta.elements[0].value = seleccionado.titulo;
         consulta.elements[1].value = seleccionado.autor;
         consulta.elements[2].value = seleccionado.isbn;
-
+        //consulta.elements[3].value = seleccionado.generos; <!-- solo textarea -->
+        for (var i = 0; i < seleccionado.generos.length; i++) {
+          $('#lista-generos').append(' '+seleccionado.generos[i]);
+        }
         alert(seleccionado.titulo);
+        console.log(seleccionado);
       }
     }
-
   });
 
   var snd = document.getElementById("snd");
