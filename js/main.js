@@ -23,13 +23,27 @@ function ponerLibro(nuevoLibro){
     alert('eskere!!');
   }else {
     $('#lista-disponibles').append('<p class="creado">'+nuevoLibro.titulo+'</p>');
-
+    libros.push(nuevoLibro);
+    console.log(libros);
   }
 }
 
-
-
 $(document).ready(function(){
+
+  $("#lista-disponibles").on('click', 'p', function(){
+    for (var i = 0; i < libros.length; i++) {
+      if ($(this).html() == libros[i].titulo) {
+        var seleccionado = libros[i];
+        var consulta = document.getElementById('consultar');
+        consulta.elements[0].value = seleccionado.titulo;
+        consulta.elements[1].value = seleccionado.autor;
+        consulta.elements[2].value = seleccionado.isbn;
+
+        alert(seleccionado.titulo);
+      }
+    }
+
+  });
 
   var snd = document.getElementById("snd");
   snd.addEventListener("click", function() {
@@ -46,7 +60,6 @@ $(document).ready(function(){
       }
     });
     var nuevoLibro = new Libro(titulo,autor,isbn,generos);
-
     ponerLibro(nuevoLibro);
   });
 
