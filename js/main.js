@@ -40,7 +40,7 @@ $(document).ready(function(){
         consulta.elements[2].value = seleccionado.isbn;
         //consulta.elements[3].value = seleccionado.generos; <!-- solo textarea -->
         for (var i = 0; i < seleccionado.generos.length; i++) {
-          $('#lista-generos').append(' '+seleccionado.generos[i]);
+          $('#lista-generos').append('<p class="eskere">'+seleccionado.generos[i]+"</p>");
         }
         alert(seleccionado.titulo);
         console.log(seleccionado);
