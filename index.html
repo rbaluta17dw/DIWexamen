@@ -6,7 +6,8 @@
   <link rel="stylesheet" type="text/css" href="css/main.css">
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/popper.min.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/main.js">
+  </script>
 </head>
 <body>
   <div class="container">
@@ -14,15 +15,15 @@
       <div class="titulo">
         <h2>Nuevo Libro</h2><span class="iconos" id="libro"></span>
       </div>
-      <form class="" id="insertar" action="#" method="post">
+      <form class="" id="crear" action="#" method="post">
         <label for="titulo">Titulo:</label>
-        <input class="texto" type="text" name="titulo" value="">
+        <input class="texto" type="text" name="titulo" value="si se puede">
         <br><br>
         <label for="autor">Autor:</label>
-        <input class="texto" type="text" name="autor" value="">
+        <input class="texto" type="text" name="autor" value="Martin">
         <br><br>
         <label for="isbn">ISBN:</label>
-        <input class="texto" type="number" name="isbn" value="">
+        <input class="texto" type="number" name="isbn" value="555">
         <br><br>
         <p>Generos:</p>
         <div id="checkbox" class="">
@@ -61,7 +62,7 @@
       <div class="titulo">
         <h2>Disponibles</h2><div class="iconos" id="disponibles"></div>
       </div>
-      <div class="disponibles">
+      <div id="lista-disponibles" class="disponibles">
         <p class="creado">Esto es un libro</p>
         <p class="devuelto">Si, es un libro</p>
         <p class="seleccionado">Si, es un libro pero de batman</p>
