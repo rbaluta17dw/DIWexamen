@@ -35,22 +35,39 @@ $(document).ready(function(){
       if ($(this).html() == libros[i].titulo) {
         var seleccionado = libros[i];
         var consulta = document.getElementById('consultar');
-        consulta.elements[0].value = seleccionado.titulo;
-        consulta.elements[1].value = seleccionado.autor;
-        consulta.elements[2].value = seleccionado.isbn;
-        //consulta.elements[3].value = seleccionado.generos; <!-- solo textarea -->
-        for (var i = 0; i < seleccionado.generos.length; i++) {
-          $('#lista-generos').append('<p class="eskere">'+seleccionado.generos[i]+"</p>");
+        if (consulta.elements[0].value == seleccionado.titulo) {
+          alert('ya lo seleccionaste m3n');
+        }else {
+          consulta.elements[0].value = seleccionado.titulo;
+          consulta.elements[1].value = seleccionado.autor;
+          consulta.elements[2].value = seleccionado.isbn;
+          //consulta.elements[3].value = seleccionado.generos; <!-- solo textarea -->
+          $('#lista-generos').html('');
+          for (var i = 0; i < seleccionado.generos.length; i++) {
+            $('#lista-generos').append('<p class="eskere">'+seleccionado.generos[i]+"</p>");
+          }
+          alert(seleccionado.titulo);
+          console.log(seleccionado);
         }
-        alert(seleccionado.titulo);
-        console.log(seleccionado);
+      }
+
+    }
+  });
+
+  // var snd = document.getElementById("snd");
+  // snd.addEventListener("click", function() {
+  $('#pst').click(function(){
+    var prestamo = document.getElementById('consultar');
+    var titulo = prestamo.elements[0].value;
+    for (var i = 0; i < libros.length; i++) {
+      if (titulo == libros[i].titulo) {
+        console.log('entraaaaa');
+        prestarLibro(libros[i]);
       }
     }
   });
 
-  var snd = document.getElementById("snd");
-  snd.addEventListener("click", function() {
-
+  $('#snd').click(function(){
     var form = document.getElementById('crear');
     var titulo = form.elements[0].value;
     var autor = form.elements[1].value;
