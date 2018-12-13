@@ -6,8 +6,9 @@
   <link rel="stylesheet" type="text/css" href="css/main.css">
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/popper.min.js"></script>
-  <script src="js/main.js">
-  </script>
+  <script src="js/jquery.validate.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/validate.js"></script>
 </head>
 <body>
   <div class="container">
@@ -17,13 +18,13 @@
       </div>
       <form class="" id="crear" action="#" method="post">
         <label for="titulo">Titulo:</label>
-        <input class="texto" type="text" name="titulo" value="si se puede">
+        <input class="texto" type="text" name="titulo" value="">
         <br><br>
         <label for="autor">Autor:</label>
-        <input class="texto" type="text" name="autor" value="Martin">
+        <input class="texto" type="text" name="autor" value="">
         <br><br>
         <label for="isbn">ISBN:</label>
-        <input class="texto" type="number" name="isbn" value="555">
+        <input class="texto" type="number" name="isbn" value="">
         <br><br>
         <p>Generos:</p>
         <div id="checkbox" class="">
@@ -62,19 +63,14 @@
       <div class="titulo">
         <h2>Disponibles</h2><div class="iconos" id="disponibles"></div>
       </div>
-      <div id="lista-disponibles" class="disponibles">
-        <p class="creado">Esto es un libro</p>
-        <p class="devuelto">Si, es un libro</p>
-        <p class="seleccionado">Si, es un libro pero de batman</p>
-        <p>No esta ni seleccionado ni nada</p>
+      <div id="lista-disponibles" class="disponibles libros">
       </div>
     </div>
     <div class="box">
       <div class="titulo">
         <h2>Prestamos</h2><div class="iconos" id="prestamos"></div>
       </div>
-      <div class="prestamos">
-        <p class="prestado">Esto es un libro pero de spaidermen</p>
+      <div id="lista-prestamos" class="prestamos libros">
       </div>
     </div>
   </div>
