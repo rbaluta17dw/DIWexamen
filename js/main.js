@@ -1,3 +1,4 @@
+
 // Constructor Libro
 function Libro(titulo, autor, isbn, generos) {
   this.titulo = titulo;
@@ -95,6 +96,10 @@ function devolverLibro(libro){
 
 // Cuando el documento este cargado
 $(document).ready(function(){
+  // Prevenir que los submit envien
+  $( ".boton" ).click(function( event ) {
+    event.preventDefault();
+  });
   // Cuando hagas click en un p dentro de lista-disponibles
   $("#lista-disponibles").on('click', 'p', function(){
     $('.disponibles p').each(function(){
@@ -113,7 +118,7 @@ $(document).ready(function(){
         // Consulta es el form de prestar y devolver
         var consulta = document.getElementById('consultar');
         if (consulta.elements[0].value == seleccionado.titulo) {
-          alert('Ese libro esta seleccionado');
+          //alert('Ese libro esta seleccionado');
         }else {
           // Llena el form con los valores del libro
           consulta.elements[0].value = seleccionado.titulo;
@@ -150,7 +155,7 @@ $(document).ready(function(){
         // Consulta es el form de prestar y devolver
         var consulta = document.getElementById('consultar');
         if (consulta.elements[0].value == seleccionado.titulo) {
-          alert('Ese libro esta seleccionado');
+          //alert('Ese libro esta seleccionado');
         }else {
           // Llena el form con los valores del libro
           consulta.elements[0].value = seleccionado.titulo;

@@ -1,6 +1,10 @@
 $(document).ready(function () {
   $('#crear').validate({
-    rules: {
+    errorPlacement: function(label, element) {
+        element.addClass('rojo');
+        label.insertBefore(element);
+    },
+      rules: {
       titulo:{
         required: true
       },
@@ -17,6 +21,10 @@ $(document).ready(function () {
     }
   });
   $('#consultar').validate({
+    errorPlacement: function(label, element) {
+        element.addClass('rojo');
+        label.insertBefore(element);
+    },
     rules: {
       email: {
         required: true,
